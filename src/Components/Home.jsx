@@ -95,11 +95,11 @@ const Home = () => {
       </div>
       <div ref={targetRef} className="template flex w-[595px] gap-10 flex-col items-center my-20 mx-3">
         <div className="ms-[360px] flex flex-col items-end">
-          <img src="../assets/National-Board-of-Revenue-1.jpg" className="w-[100px]" />
+          <img src="https://i.postimg.cc/G3YvmPH7/National-Board-of-Revenue-1.jpg" className="w-[100px]" />
           <p>Reference Number: 000000000</p>
         </div>
         <div className="text-center flex flex-col justify-center items-center">
-          <img className="size-12" src="../assets/rutern-01.jpg" alt="e" />
+          <img className="size-12" src="https://i.postimg.cc/02sDM6S8/rutern-01.jpg" alt="e" />
           <p>
             Government of the People's Republic of Bangladesh
             <br />
