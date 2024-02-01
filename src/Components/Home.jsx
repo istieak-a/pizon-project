@@ -99,7 +99,7 @@ const Home = () => {
           <p>Reference Number: 000000000</p>
         </div>
         <div className="text-center flex flex-col justify-center items-center">
-          <img className="size-12" src="https://i.postimg.cc/G3YvmPH7/National-Board-of-Revenue-1.jpg" alt="e" />
+          <img className="size-12" src="https://i.postimg.cc/mgwgXkhy/rutern-02.jpg" alt="e" />
           <p>
             Government of the People's Republic of Bangladesh
             <br />
