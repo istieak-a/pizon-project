@@ -13,7 +13,12 @@ const Home = () => {
   const [zcircle, setZcircle] = useState("");
   const [location, setLocation] = useState("");
   const [qrtext, setQrtext] = useState("");
-  const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const generateRandomNumber = () => {
+    const randomNumber = Math.floor(1000000000 + Math.random() * 9000000000);
+    return randomNumber;
+  };
+  const randomTenDigitNumber = generateRandomNumber();
 
   return (
     <div className="font-serif flex justify-between">
@@ -91,15 +96,30 @@ const Home = () => {
             onChange={(e) => setQrtext(e.target.value)}
           />
         </div>
-        <button onClick={() => toPDF()} className="mt-5 bg-blue-600 text-white px-7 py-3 rounded-xl">Download</button>
+        <button
+          onClick={() => toPDF()}
+          className="mt-5 bg-blue-600 text-white px-7 py-3 rounded-xl"
+        >
+          Download
+        </button>
       </div>
-      <div ref={targetRef} className="template flex w-[595px] gap-10 flex-col items-center my-20 mx-3">
+      <div
+        ref={targetRef}
+        className="template flex w-[595px] gap-10 flex-col items-center my-20 mx-3"
+      >
         <div className="ms-[360px] flex flex-col items-end">
-          <img src="https://i.postimg.cc/02sDM6S8/rutern-01.jpg" className="w-[100px]" />
-          <p>Reference Number: 000000000</p>
+          <img
+            src="https://i.postimg.cc/02sDM6S8/rutern-01.jpg"
+            className="w-[100px]"
+          />
+          <p>Reference Number: {randomTenDigitNumber}</p>
         </div>
         <div className="text-center flex flex-col justify-center items-center">
-          <img className="size-12" src="https://i.postimg.cc/mgwgXkhy/rutern-02.jpg" alt="e" />
+          <img
+            className="size-12"
+            src="https://i.postimg.cc/mgwgXkhy/rutern-02.jpg"
+            alt="e"
+          />
           <p>
             Government of the People's Republic of Bangladesh
             <br />
@@ -142,7 +162,9 @@ const Home = () => {
             <p>{inputCurrentAddress}</p>
             <p>{inputPermanentAddress}</p>
             <br />
-            <p>Individual</p>
+            <p>
+              Individual {`->`} Bangladeshi {`->`} Having NID{" "}
+            </p>
           </div>
         </div>
         <p className="px-28">
@@ -153,11 +175,12 @@ const Home = () => {
           Tax 0 BDT. .
         </p>
         <div className="bg-red-200 h-10 w-10">
-            <QRCode value={qrtext}
+          <QRCode
+            value={`TIN: ${inputTin} Reference Number: ${randomTenDigitNumber}`}
             size={256}
             style={{ height: "auto", maxWidth: "100%", width: "100%" }}
             viewBox={`0 0 256 256`}
-             />
+          />
         </div>
         <p>
           This is a system generated certificate, and requires no signature.{" "}
