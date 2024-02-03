@@ -20,22 +20,30 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h1>Login to continue</h1>
-      <input 
-        type="text" 
-        placeholder='Email' 
-        value={inputUsername} 
-        onChange={(e) => setInputUsername(e.target.value)} 
-      />
-      <input 
-        type="password" 
-        placeholder='Password' 
-        value={inputPassword} 
-        onChange={(e) => setInputPassword(e.target.value)} 
-      />
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <div className="flex flex-col items-center justify-center h-screen">
+  <h1 className="text-3xl font-bold mb-4">Login to continue</h1>
+  <input 
+    type="text" 
+    placeholder='Email' 
+    value={inputUsername} 
+    onChange={(e) => setInputUsername(e.target.value)} 
+    className="w-64 p-2 mb-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+  />
+  <input 
+    type="password" 
+    placeholder='Password' 
+    value={inputPassword} 
+    onChange={(e) => setInputPassword(e.target.value)} 
+    className="w-64 p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+  />
+  <button 
+    onClick={handleLogin} 
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+  >
+    Login
+  </button>
+</div>
+
   );
 };
 

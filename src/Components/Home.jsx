@@ -25,100 +25,68 @@ const Home = () => {
   return (
     <div className="flex font-serif ">
       <div className="m-10">
-        <h2>Form Area</h2>
-        <div className="flex flex-col gap-3">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            placeholder="Name"
-            value={inputName}
-            onChange={(e) => setInputName(e.target.value)}
-          />
-          <label htmlFor="tin">Tin</label>
-          <input
-            type="text"
-            placeholder="Tin"
-            value={inputTin}
-            onChange={(e) => setInputTin(e.target.value)}
-          />
-          <label htmlFor="father">Father</label>
-          <input
-            type="text"
-            placeholder="Father"
-            value={inputFather}
-            onChange={(e) => setInputFather(e.target.value)}
-          />
-          <label htmlFor="mother">Mother</label>
-          <input
-            type="text"
-            placeholder="Mother"
-            value={inputMother}
-            onChange={(e) => setInputMother(e.target.value)}
-          />
-          <label htmlFor="currentAddress">Current Address</label>
-          <input
-            type="text"
-            placeholder="Current Address"
-            value={inputCurrentAddress}
-            onChange={(e) => setInputCurrentAddress(e.target.value)}
-          />
-          <label htmlFor="permanentAddress">Permanent Address</label>
-          <input
-            type="text"
-            placeholder="Permanent Address"
-            value={inputPermanentAddress}
-            onChange={(e) => setInputPermanentAddress(e.target.value)}
-          />
-          <label htmlFor="permanentAddress2">Permanent Address 2nd line</label>
-          <input
-            type="text"
-            placeholder="Permanent Address"
-            value={inputPermanentAddress2}
-            onChange={(e) => setInputPermanentAddress2(e.target.value)}
-          />
-          <label htmlFor="zone">Zone</label>
-          <input
-            type="text"
-            placeholder="Zone"
-            value={zone}
-            onChange={(e) => setZone(e.target.value)}
-          />
-          <label htmlFor="circle">Circle</label>
-          <input
-            type="text"
-            placeholder="Circle"
-            value={zcircle}
-            onChange={(e) => setZcircle(e.target.value)}
-          />
-          <label htmlFor="location">Location</label>
-          <input
-            type="text"
-            placeholder="Location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <label htmlFor="Income">Income</label>
-          <input
-            type="text"
-            placeholder="Income"
-            value={inputIncome}
-            onChange={(e) => setInputIncome(e.target.value)}
-          />
-          <label htmlFor="Wealth">Wealth</label>
-          <input
-            type="text"
-            placeholder="Income"
-            value={inputWealth}
-            onChange={(e) => setInputWealth(e.target.value)}
-          />
+        <h2 className="mb-4 text-2xl font-semibold">Form Area</h2>
+        <div className="grid grid-cols-2 gap-4">
+          {/* Input Field Structure */}
+          {[
+            { label: "Name", state: inputName, setState: setInputName },
+            { label: "Tin", state: inputTin, setState: setInputTin },
+            {
+              label: "Father's Name",
+              state: inputFather,
+              setState: setInputFather,
+            },
+            {
+              label: "Mother's Name",
+              state: inputMother,
+              setState: setInputMother,
+            },
+            {
+              label: "Current Address",
+              state: inputCurrentAddress,
+              setState: setInputCurrentAddress,
+            },
+            {
+              label: "Permanent Address",
+              state: inputPermanentAddress,
+              setState: setInputPermanentAddress,
+            },
+            {
+              label: "Permanent Address 2nd Line",
+              state: inputPermanentAddress2,
+              setState: setInputPermanentAddress2,
+            },
+            { label: "Zone", state: zone, setState: setZone },
+            { label: "Circle", state: zcircle, setState: setZcircle },
+            { label: "Location", state: location, setState: setLocation },
+            { label: "Income", state: inputIncome, setState: setInputIncome },
+            { label: "Wealth", state: inputWealth, setState: setInputWealth },
+          ].map((field, index) => (
+            <div key={index} className="mb-4 flex flex-col">
+              <label
+                htmlFor={field.label}
+                className="mb-1 text-sm font-semibold"
+              >
+                {field.label}
+              </label>
+              <input
+                type="text"
+                placeholder={field.label}
+                value={field.state}
+                onChange={(e) => field.setState(e.target.value)}
+                className="rounded border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
+              />
+            </div>
+          ))}
         </div>
         <button
           onClick={() => toPDF()}
-          className="mt-5 rounded-xl bg-blue-600 px-7 py-3 text-white"
+          className="mt-5 rounded-xl bg-blue-600 px-7 py-3 text-white hover:bg-blue-700 focus:outline-none"
         >
           Download
         </button>
       </div>
+
       <div
         ref={targetRef}
         className="flex h-full w-full items-center justify-center"
