@@ -21,7 +21,7 @@ const Home = () => {
   const randomTenDigitNumber = generateRandomNumber();
 
   return (
-    <div className="font-serif flex justify-between">
+    <div className="font-serif flex ">
       <div className="m-10">
         <h2>Form Area</h2>
         <div className="flex flex-col gap-3">
@@ -88,7 +88,6 @@ const Home = () => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          
         </div>
         <button
           onClick={() => toPDF()}
@@ -99,9 +98,9 @@ const Home = () => {
       </div>
       <div
         ref={targetRef}
-        className="template flex w-[595px] h-full justify-center gap-10 flex-col items-center"
+        className="template flex w-[595px] h-[842px] justify-center ps-[150px] gap-10 flex-col items-center"
       >
-        <div className="ms-[360px] flex flex-col items-end">
+        <div className="ms-[270px] flex flex-col items-end">
           <img
             src="https://i.postimg.cc/02sDM6S8/rutern-01.jpg"
             className="w-[100px]"
@@ -161,7 +160,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <p className="px-20">
+        <p>
           This is to certify that {inputName} is a registered taxpayer of Taxes
           Circle-{zcircle}, Taxes Zone- {zone}, {location}. The taxpayer has
           filled the return of income for the Assessment Year 2023-24. Shown
