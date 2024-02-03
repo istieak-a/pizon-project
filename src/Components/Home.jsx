@@ -88,13 +88,7 @@ const Home = () => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <label htmlFor="qrtext">QR Text</label>
-          <input
-            type="text"
-            placeholder="QR Text"
-            value={qrtext}
-            onChange={(e) => setQrtext(e.target.value)}
-          />
+          
         </div>
         <button
           onClick={() => toPDF()}
@@ -105,7 +99,7 @@ const Home = () => {
       </div>
       <div
         ref={targetRef}
-        className="template flex w-[595px] gap-10 flex-col items-center my-20 mx-3"
+        className="template flex w-[595px] h-full justify-center gap-10 flex-col items-center"
       >
         <div className="ms-[360px] flex flex-col items-end">
           <img
@@ -167,7 +161,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <p className="px-28">
+        <p className="px-20">
           This is to certify that {inputName} is a registered taxpayer of Taxes
           Circle-{zcircle}, Taxes Zone- {zone}, {location}. The taxpayer has
           filled the return of income for the Assessment Year 2023-24. Shown
@@ -176,7 +170,7 @@ const Home = () => {
         </p>
         <div className="bg-red-200 h-10 w-10">
           <QRCode
-            value={`TIN: ${inputTin} Reference Number: ${randomTenDigitNumber}`}
+            value={`TIN: ${inputTin}, Reference Number: ${randomTenDigitNumber}`}
             size={256}
             style={{ height: "auto", maxWidth: "100%", width: "100%" }}
             viewBox={`0 0 256 256`}
