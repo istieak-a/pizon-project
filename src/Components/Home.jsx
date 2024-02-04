@@ -8,6 +8,7 @@ const Home = () => {
   const [inputFather, setInputFather] = useState("");
   const [inputMother, setInputMother] = useState("");
   const [inputCurrentAddress, setInputCurrentAddress] = useState("");
+  const [inputCurrentAddress2, setInputCurrentAddress2] = useState("");
   const [inputPermanentAddress, setInputPermanentAddress] = useState("");
   const [inputPermanentAddress2, setInputPermanentAddress2] = useState("");
   const [zone, setZone] = useState("");
@@ -45,6 +46,11 @@ const Home = () => {
               label: "Current Address",
               state: inputCurrentAddress,
               setState: setInputCurrentAddress,
+            },
+            {
+              label: "Current Address2",
+              state: inputCurrentAddress2,
+              setState: setInputCurrentAddress2,
             },
             {
               label: "Permanent Address",
@@ -118,7 +124,7 @@ const Home = () => {
               Assessment Year: 2023-2024
             </p>
           </div>
-          <div className="flex flex-col gap-10 px-[62px]">
+          <div className="flex flex-col px-[62px]">
             <div className="flex">
               <div className="w-[240px]">
                 <p>Taxpayer's Name</p>
@@ -126,9 +132,8 @@ const Home = () => {
                 <p>Father's Name</p>
                 <p>Mother's Name</p>
                 <p>Current Address</p>
+                {inputCurrentAddress2 ? <br /> : null}
                 <p>Permanent Address</p>
-                <br />
-                <p>Status</p>
               </div>
               <div className="w-[25px]">
                 <p>:</p>
@@ -136,8 +141,7 @@ const Home = () => {
                 <p>:</p>
                 <p>:</p>
                 <p>:</p>
-                <p>:</p>
-                <br />
+                {inputCurrentAddress2 ? <br /> : null}
                 <p>:</p>
               </div>
               <div className="displayp">
@@ -146,15 +150,31 @@ const Home = () => {
                 <p>{inputFather}</p>
                 <p>{inputMother}</p>
                 <p>{inputCurrentAddress}</p>
+                {inputCurrentAddress2 ? <p>{inputCurrentAddress2}</p> : null}
                 <p>{inputPermanentAddress}</p>
-                <p>{inputPermanentAddress2}</p>
+                {inputPermanentAddress2 ? (
+                  <p>{inputPermanentAddress2}</p>
+                ) : null}
                 {/* <br /> */}
+                {/* <p>
+                  Individual {`->`} Bangladeshi {`->`} Having NID
+                </p> */}
+              </div>
+            </div>
+            <div className="flex">
+              <div className="w-[240px]">
+                <p>Status</p>
+              </div>
+              <div className="w-[25px]">
+                <p>:</p>
+              </div>
+              <div className="displayp">
                 <p>
                   Individual {`->`} Bangladeshi {`->`} Having NID
                 </p>
               </div>
             </div>
-            <p className="text-ellipsis text-pretty">
+            <p className="text-ellipsis text-pretty mt-8">
               This is to certify that {inputName} is a registered taxpayer of
               Taxes Circle-{zcircle}, Taxes Zone- {zone}, {location}. The
               taxpayer has filled the return of income for the Assessment Year
@@ -162,7 +182,7 @@ const Home = () => {
               {inputWealth} BDT and Paid Tax 0 BDT. .
             </p>
           </div>
-          <div className="h-10 w-10 bg-red-200">
+          <div className="h-16 w-16 bg-red-200">
             <QRCode
               value={`TIN: ${inputTin}, Reference Number: ${randomTenDigitNumber}`}
               size={256}
