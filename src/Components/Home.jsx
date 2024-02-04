@@ -179,7 +179,7 @@ const Home = () => {
               Taxes Circle-{zcircle}, Taxes Zone- {zone}, {location}. The
               taxpayer has filled the return of income for the Assessment Year
               2023-24. Shown Total Income {inputIncome} BDT, Net Wealth{" "}
-              {inputWealth} BDT and Paid Tax 0 BDT. .
+              {inputWealth} BDT and Paid Tax 0 BDT.
             </p>
           </div>
           <div className="h-16 w-16 bg-red-200">
