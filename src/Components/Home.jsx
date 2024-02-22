@@ -24,7 +24,7 @@ const Home = () => {
   const randomTenDigitNumber = generateRandomNumber();
 
   return (
-    <div className="flex flex-col font-serif ">
+    <div className="flex font-serif ">
       <div className="m-10">
         <h2 className="mb-4 text-2xl font-semibold text-blue-700">Form Area</h2>
         <div className="grid grid-cols-2 gap-4">
