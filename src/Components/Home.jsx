@@ -15,7 +15,7 @@ const Home = () => {
   const [zcircle, setZcircle] = useState("");
   const [location, setLocation] = useState("");
   const [inputIncome, setInputIncome] = useState("2,99,999");
-  const [inputWealth, setInputWealth] = useState("10,00,000");
+  const [inputWealth, setInputWealth] = useState("10,99,999");
   const { toPDF, targetRef } = usePDF({ filename: inputName });
   const generateRandomNumber = () => {
     const randomNumber = Math.floor(1000000000 + Math.random() * 9000000000);
