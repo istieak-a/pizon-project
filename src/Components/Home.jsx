@@ -13,7 +13,7 @@ const Home = () => {
   // const [zone, setZone] = useState("");
   const [zcircle, setZcircle] = useState("");
   // const [location, setLocation] = useState("Dhaka");
-  const [zoneLocation , setZoneLocation] = useState('03, Dhaka')
+  const [zoneLocation , setZoneLocation] = useState('')
   const [inputIncome, setInputIncome] = useState("2,00,000");
   const [inputWealth, setInputWealth] = useState("3,00,000");
   const { toPDF, targetRef } = usePDF({ filename: inputName });
