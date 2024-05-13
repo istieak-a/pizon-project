@@ -10,9 +10,10 @@ const Home = () => {
   const [inputMother, setInputMother] = useState("");
   const [inputCurrentAddress, setInputCurrentAddress] = useState("");
   const [inputPermanentAddress, setInputPermanentAddress] = useState("");
-  const [zone, setZone] = useState("");
+  // const [zone, setZone] = useState("");
   const [zcircle, setZcircle] = useState("");
-  const [location, setLocation] = useState("Dhaka");
+  // const [location, setLocation] = useState("Dhaka");
+  const [zoneLocation , setZoneLocation] = useState('03, Dhaka')
   const [inputIncome, setInputIncome] = useState("2,00,000");
   const [inputWealth, setInputWealth] = useState("3,00,000");
   const { toPDF, targetRef } = usePDF({ filename: inputName });
@@ -59,9 +60,9 @@ const Home = () => {
               state: inputPermanentAddress,
               setState: setInputPermanentAddress,
             },
-            { label: "Zone", state: zone, setState: setZone },
+            { label: "Zone & Location", state: zoneLocation, setState: setZoneLocation },
             { label: "Circle", state: zcircle, setState: setZcircle },
-            { label: "Location", state: location, setState: setLocation },
+            // { label: "Location", state: location, setState: setLocation },
             { label: "Income", state: inputIncome, setState: setInputIncome },
             { label: "Wealth", state: inputWealth, setState: setInputWealth },
           ].map((field, index) => (
@@ -165,7 +166,7 @@ const Home = () => {
               </table>
               <p className="mt-8 text-ellipsis text-justify">
                 This is to certify that {inputName} is a registered taxpayer of
-                Taxes Circle-{zcircle}, Taxes Zone- {zone}, {location}. The
+                Taxes Circle-{zcircle}, Taxes Zone- {zoneLocation}. The
                 taxpayer has filled the return of income for the Assessment Year
                 2023-2024. Shown Total Income {inputIncome} BDT, Net Wealth{" "}
                 {inputWealth} BDT and Paid Tax 0 BDT.
