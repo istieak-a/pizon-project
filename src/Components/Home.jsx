@@ -11,6 +11,7 @@ const Home = () => {
   const [inputCurrentAddress, setInputCurrentAddress] = useState("");
   const [inputPermanentAddress, setInputPermanentAddress] = useState("");
   // const [zone, setZone] = useState("");
+  const [inputYear, setInputYear] = useState("2023-2024");
   const [zcircle, setZcircle] = useState("");
   // const [location, setLocation] = useState("Dhaka");
   const [zoneLocation , setZoneLocation] = useState('')
@@ -61,7 +62,8 @@ const Home = () => {
               setState: setInputPermanentAddress,
             },
             { label: "Zone & Location", state: zoneLocation, setState: setZoneLocation },
-            { label: "Circle", state: zcircle, setState: setZcircle },
+            { label: "Circle", state: zcircle, setState: setZcircle }, 
+            { label: "Year", state: inputYear, setState: setInputYear },
             // { label: "Location", state: location, setState: setLocation },
             { label: "Income", state: inputIncome, setState: setInputIncome },
             { label: "Wealth", state: inputWealth, setState: setInputWealth },
@@ -167,8 +169,8 @@ const Home = () => {
               <p className="mt-8 text-ellipsis text-justify">
                 This is to certify that {inputName} is a registered taxpayer of
                 Taxes Circle-{zcircle}, Taxes Zone- {zoneLocation}. The
-                taxpayer has filled the return of income for the Assessment Year
-                2023-2024. Shown Total Income {inputIncome} BDT, Net Wealth{" "}
+                taxpayer has filled the return of income for the Assessment Year{" "}
+                {inputYear}. Shown Total Income {inputIncome} BDT, Net Wealth{" "}
                 {inputWealth} BDT and Paid Tax 0 BDT.
               </p>
             </div>
