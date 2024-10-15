@@ -123,7 +123,7 @@ const Home = () => {
               <p className="pt-5">
                 Income Tax Certificate
                 <br />
-                Assessment Year: 2023-2024
+                Assessment Year: {inputYear}
               </p>
             </div>
             <div className="flex w-full flex-col px-[62px]">
