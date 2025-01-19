@@ -11,7 +11,7 @@ const Home = () => {
   const [inputCurrentAddress, setInputCurrentAddress] = useState("");
   const [inputPermanentAddress, setInputPermanentAddress] = useState("");
   // const [zone, setZone] = useState("");
-  const [inputYear, setInputYear] = useState("2023-2024");
+  const [inputYear, setInputYear] = useState("2024-2025");
   const [zcircle, setZcircle] = useState("");
   // const [location, setLocation] = useState("Dhaka");
   const [zoneLocation , setZoneLocation] = useState('')
